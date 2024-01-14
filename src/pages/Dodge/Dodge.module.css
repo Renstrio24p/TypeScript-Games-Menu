@@ -1,0 +1,98 @@
+body {
+    background: gray;
+    margin: 0; /* Reset margin to ensure no default spacing */
+    overflow: hidden; /* Hide scroll bars */
+}
+
+.dodge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.playerImage {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+:where(.playerImage, .backgroundImage, .enemyImage) {
+    display: none;
+}
+
+.dodger h1 {
+    font-weight: 500;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    background-color: black;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: medium;
+    color: white; 
+
+}
+
+.dodger a {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    z-index: 1;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: medium;
+    color: white; /* Set text color */
+}
+
+.fullscreen {
+    position: absolute;
+    font-size: 20px;
+    padding: 10px;
+    top: 145px;
+    right: 10px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 683px) {
+    .dodger a {
+        top: 20px;
+        background-color: white;
+        color: black;
+    }
+
+    .dodger h1 {
+        top: 20px;
+        right: 90px;
+        background-color: white;
+        color: black;
+        font-size: 15px;
+    }
+
+    .dodger .fullscreen {
+        top: 20px;
+        left: 20px;
+        font-size: medium;
+        background-color: white;
+        color: black;
+    }
+
+    body {
+        background: black;
+    }
+}

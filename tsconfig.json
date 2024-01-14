@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "esModuleInterop": true,
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": false
+  },
+  "exclude": ["node_modules"],
+  "include": ["./**/*.ts"],
+  "ts-node": {
+    "experimentalSpecifierResolution": "node"
+  }
+}
