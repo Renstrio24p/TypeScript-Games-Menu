@@ -11,6 +11,7 @@ export default function intro(DOM: HTMLDivElement) {
       <div class=${Styles.items}>
         <a href='/game1'>Dog Dodge Game Basics</a>
         <a href='/game2'>Dog Dodge Game Managing States</a>
+        <a href='/game3'>Final Game</a>
       </div>
       <p>Work in Progress to add some Games this is not the final work yet. <br>
          I wrote this project in Vanilla TypeScript. 

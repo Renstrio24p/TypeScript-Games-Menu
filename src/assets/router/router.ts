@@ -1,5 +1,6 @@
 import Animation from "../../pages/Animation/Animation.ts";
 import Dodge from "../../pages/Dodge/Dodge.ts";
+import FinalGame from "../../pages/FinalGame/FinalGame.ts";
 import intro from "../../pages/Intro/Intro.ts";
 import NotFound from "../../pages/NotFound.ts";
 import { TSRouter } from "./router.class.ts";
@@ -20,6 +21,11 @@ const router = new TSRouter([
     {
       path: '/game2',
       element: ()=> Animation(DOM),
+      errorElement: ()=>{},
+    },
+    {
+      path: '/game3',
+      element: ()=> FinalGame(DOM),
       errorElement: ()=>{},
     },
     {

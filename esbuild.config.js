@@ -35,7 +35,7 @@ const EsbuildOptions = {
                 src: './src/assets/audio',
                 dest: './dist',
                 recursive: true,
-                watch: true
+                watch: true,
               }),
               CssModulesPlugin({
                 force: true,
