@@ -14,6 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
+    "noImplicitThis": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": false,

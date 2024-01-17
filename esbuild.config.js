@@ -21,7 +21,7 @@ const EsbuildOptions = {
             '.html':'copy',
             '.png':'copy',
             '.ts':'ts',
-            '.wav':'copy'
+            '.wav':'copy',
         },
         plugins: [
             imagePlugin(),
