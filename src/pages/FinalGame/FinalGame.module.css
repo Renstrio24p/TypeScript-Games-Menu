@@ -5,6 +5,13 @@
     z-index: -1;
 }
 
+.desc {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: -2;
+}
+
 .navigate {
     background-color: black;
     padding: 10px;

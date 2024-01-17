@@ -7,7 +7,9 @@ export default function intro(DOM: HTMLDivElement) {
   DOM.innerHTML = (`
     <div class='${Styles.container}'>
       <h1>Vanilla TS Games Menu</h1>
-      <p>Vanilla TypeScript Single Page Routing Games</p>
+      <p>Vanilla TypeScript Single Page Routing Games <br>
+        Click one of these links below to route you to another game page.
+      </p>
       <div class=${Styles.items}>
         <a href='/game1'>Dog Dodge Game Basics</a>
         <a href='/game2'>Dog Dodge Game Managing States</a>

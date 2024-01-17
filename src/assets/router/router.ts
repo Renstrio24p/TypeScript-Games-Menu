@@ -2,7 +2,7 @@ import Animation from "../../pages/Animation/Animation.ts";
 import Dodge from "../../pages/Dodge/Dodge.ts";
 import FinalGame from "../../pages/FinalGame/FinalGame.ts";
 import intro from "../../pages/Intro/Intro.ts";
-import NotFound from "../../pages/NotFound.ts";
+import NotFound from "../../pages/NotFound/NotFound.ts";
 import { TSRouter } from "./router.class.ts";
 
 export default function Router(DOM: HTMLDivElement) {

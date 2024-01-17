@@ -9,6 +9,13 @@ export default function FinalGame(DOM: HTMLDivElement) {
     <div class=${Styles.container}>
         <canvas id='canvas' class=${Styles.canvas}></canvas>
         <a href='/' class='${Styles.navigate}'>Home</a>
+        <p class='${Styles.desc}'>
+          Click <i class="fa-solid fa-arrow-right"></i> to move right <br>
+          Click <i class="fa-solid fa-arrow-left"></i> to move left <br>
+          Click <i class="fa-solid fa-arrow-up"></i> to jump <br>
+          Click <i class="fa-solid fa-arrow-down"></i> to dive <br>
+          Click <i>Enter</i> to roll while holding <br>
+        </p>
         <img class='${Styles.player}' id='player' src='player-final.png' alt='image'>
         <img class='${Styles.layer}' id='layer1' src='backgrounds/layer-1-forest.png' alt='image'>
         <img class='${Styles.layer}' id='layer2' src='backgrounds/layer-2-forest.png' alt='image'>
