@@ -5,6 +5,16 @@
     z-index: -1;
 }
 
+.navigate {
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white
+}
+
 .canvas {
     background-color: white;
     border: 5px solid wheat;

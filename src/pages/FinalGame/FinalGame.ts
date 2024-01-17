@@ -7,8 +7,8 @@ export default function FinalGame(DOM: HTMLDivElement) {
 
   DOM.innerHTML = (`
     <div class=${Styles.container}>
-        <h1>FinalGame</h1>
         <canvas id='canvas' class=${Styles.canvas}></canvas>
+        <a href='/' class='${Styles.navigate}'>Home</a>
         <img class='${Styles.player}' id='player' src='player-final.png' alt='image'>
         <img class='${Styles.layer}' id='layer1' src='backgrounds/layer-1-forest.png' alt='image'>
         <img class='${Styles.layer}' id='layer2' src='backgrounds/layer-2-forest.png' alt='image'>
