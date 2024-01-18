@@ -1,4 +1,5 @@
 import { CollisionAnimation } from "./collisionAnimation";
+import { FloatingMessage } from "./floatingMessages";
 import Game from "./game";
 import { Diving, Falling, Hit, Jumping, Rolling, Running, State } from "./state";
 import { Sitting } from "./state";
@@ -53,7 +54,7 @@ export class Player {
             new Diving(this.game),
             new Hit(this.game),
         ];
-        
+        this.currentState = undefined
     }
 
     update(input: string[],deltaTime: number) {
@@ -148,8 +149,16 @@ export class Player {
                 this.game.collisions.push(new CollisionAnimation(this.game,enemy.x! + enemy.width! * 0.5,enemy.y! + enemy.height! * 0.5))
                 if(this.currentState === this.states[4] || this.currentState === this.states[5]){
                     this.game.score++
+                    this.game.floatingMessages.push(new FloatingMessage('+1',enemy.x!,enemy.y!,100,50))
                 } else {
                     this.setState(6,0)
+                    if(this.game.score <= 0){
+                        this.game.score = 0
+                    } else {
+                        this.game.score-=5
+                    }
+                    this.game.lives--
+                    if(this.game.lives <= 0) this.game.gameOver = true
                 }
 
             } 

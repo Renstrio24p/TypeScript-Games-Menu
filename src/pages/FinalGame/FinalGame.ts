@@ -27,13 +27,14 @@ export default function FinalGame(DOM: HTMLDivElement) {
         <img class='${Styles.enemy}' id='enemy_spider_big' src='enemies/enemy_spider_big.png' alt='spider enemy'>
         <img class='${Styles.particle}' id='fire' src='effects/fire.png' alt='fire particle'>
         <img class='${Styles.particle}' id='collision' src='effects/boom.png' alt='boom particle'>
+        <img class='${Styles.particle}' id='lives' src='effects/lives.png' alt='lives icon'>
     </div>
   `)
 
   window.addEventListener('load', () => {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement
     const ctx = canvas.getContext('2d')
-    canvas.width = 500
+    canvas.width = 900
     canvas.height = 500
 
     const game = new Game(canvas.width,canvas.height)

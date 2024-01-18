@@ -2,6 +2,7 @@ import { UI } from "./UI";
 import { Background } from "./background";
 import { CollisionAnimation } from "./collisionAnimation";
 import { ClimbingEnemy, Enemy, FlyingEnemy, GroundEnemy } from "./enemies";
+import { FloatingMessage } from "./floatingMessages";
 import { InputHandler } from "./input";
 import { Particle } from "./particles";
 import { Player } from "./player";
@@ -20,14 +21,17 @@ export default class Game {
   enemies: Enemy[]
   particles: Particle[]
   collisions: CollisionAnimation[]
+  floatingMessages: FloatingMessage[]
   maxParticles: number
   enemyTimer: number
   enemyInterval: number
   debug: boolean
   score: number
+  winningScore: number
   time: number
   maxTime: number
   gameOver: boolean
+  lives: number
   fontColor: string
 
   constructor(width: number, height: number) {
@@ -43,15 +47,18 @@ export default class Game {
     this.enemies = []
     this.particles = []
     this.collisions = []
+    this.floatingMessages = []
     this.maxParticles = 50
     this.enemyTimer = 0
     this.enemyInterval = 1000
     this.debug = false
     this.score = 0
+    this.winningScore = 40
     this.fontColor = 'black'
     this.time = 0
-    this.maxTime = 20000
+    this.maxTime = 30000
     this.gameOver = false
+    this.lives = 5
     this.player.currentState = this.player.states[0];
     this.player.currentState.enter();
   }
@@ -73,6 +80,12 @@ export default class Game {
       enemy.update(deltaTime)
       if (enemy.markedForDeletion) this.enemies.splice(this.enemies.indexOf(enemy), 1)
     })
+
+    // Handle Messages
+    this.floatingMessages.forEach(message => {
+      message.update()
+    })
+
     // Handle Particles
     this.particles.forEach((particle, index) => {
       particle.update()
@@ -87,6 +100,11 @@ export default class Game {
        collision.update(deltaTime)
        if(collision.markedForDeletion) this.collisions.splice(index,1)
     })
+
+    this.floatingMessages = this.floatingMessages.filter(message => !message.markedForDeletion)
+    this.enemies = this.enemies.filter(enemy => !enemy.markedForDeletion)
+    this.collisions = this.collisions.filter(collision => !collision.markedForDeletion)
+    this.particles = this.particles.filter(particle => !particle.markedForDeletion)
   }
 
   draw(ctx: CanvasRenderingContext2D): void {
@@ -100,6 +118,9 @@ export default class Game {
     })
     this.collisions.forEach(collision => {
       collision.draw(ctx)
+    })
+    this.floatingMessages.forEach(message => {
+      message.draw(ctx)
     })
     this.UI.draw(ctx)
   }
